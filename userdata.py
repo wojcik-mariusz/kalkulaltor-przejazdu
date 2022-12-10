@@ -1,5 +1,3 @@
-#TODO env
-#TODO coordinates
 #TODO validator
 #TODO case when user not specify car name
 
@@ -18,8 +16,9 @@ def get_car_name() -> str:
 def get_destination_and_origin() -> dict:
     coordinates = {}
     if len(argv) > 3:
-        coordinates['origin_adres'] = argv[2]
-        coordinates['destination_adres'] = argv[3]
+        coordinates['origin_address'] = argv[2]
+        coordinates['destination_address'] = argv[3]
+        return coordinates
 
     else:
         raise ValueError("Missed origin or destination coordinates")
