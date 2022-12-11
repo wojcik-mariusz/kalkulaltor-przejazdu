@@ -8,8 +8,8 @@ def app() -> NoReturn:
     payload = get_destination_and_origin()
     car = get_car_name()
     data = serialize_data_from_gmaps_api(
-        destination_address=payload.get("destination_address"),
-        origin_address=payload.get("origin_address"),
+        destination_address_from_json=payload.get("destination_adres"),
+        origin_address_from_json=payload.get("origin_adres"),
     )
 
     print(
