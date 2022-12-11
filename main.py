@@ -22,3 +22,7 @@ def app() -> NoReturn:
     Length: {data.get('distance_in_m')/1000} km.
     """
     )
+
+
+if __name__ == "__main__":
+    app()
