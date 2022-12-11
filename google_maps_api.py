@@ -21,15 +21,20 @@ def get_data_json_from_gmaps_api(origin_address: str, destination_address: str) 
         raise NotImplemented
 
 
-def serialize_data_from_gmaps_api(origin_address: str, destination_address: str):
-    data = get_data_json_from_gmaps_api(origin_address, destination_address)
-    destination_addresses = data.get('destination_addresses')[0]
-    origin_addresses = data.get('origin_addresses')[0]
-    distance_in_m = data.get('rows')[0]['elements'][0]['distance']['value']
-    duration = data.get('rows')[0]['elements'][0]['duration']['text']
+def serialize_data_from_gmaps_api(
+    origin_address_from_json: str, destination_address_from_json: str
+):
+    data = get_data_json_from_gmaps_api(
+        origin_address=origin_address_from_json,
+        destination_address=destination_address_from_json,
+    )
+    destination_addresses = data.get("destination_addresses")[0]
+    origin_addresses = data.get("origin_addresses")[0]
+    distance_in_m = data.get("rows")[0]["elements"][0]["distance"]["value"]
+    duration = data.get("rows")[0]["elements"][0]["duration"]["text"]
     return {
-        'destination_addresses': destination_addresses,
-        'origin_addresses': origin_addresses,
-        'distance_in_m': distance_in_m,
-        'duration': duration
+        "destination_addresses": destination_addresses,
+        "origin_addresses": origin_addresses,
+        "distance_in_m": distance_in_m,
+        "duration": duration,
     }
