@@ -22,4 +22,4 @@ def get_destination_and_origin() -> dict:
         return coordinates
 
     else:
-        raise ValueError("Missed origin or destination coordinates")
+        raise ValueError("Missed car name, origin or destination address")
