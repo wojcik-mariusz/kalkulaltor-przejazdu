@@ -1,7 +1,4 @@
-# TODO env
-# TODO coordinates
 # TODO validator
-# TODO case when user not specify car name
 
 from sys import argv
 
